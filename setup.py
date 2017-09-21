@@ -1,11 +1,12 @@
 from setuptools import setup
 
-setup(name='bittrex',
-      version='0.1',
-      description='Simple API wrapper for the Bittrex API',
-      url='http://github.com/nathbo/bittrex',
+setup(name='cryptoex',
+      version='0.1.1',
+      description='Simple API wrappers for the exchange APIs',
+      url='http://github.com/nathbo/cryptoexchanges',
       author='Nathanael Bosch',
       author_email='nathanael.bosch@gmail.com',
       license='MIT',
-      packages=['bittrex'],
+      packages=['cryptoex'],
+      # modules=['bittrex'],
       zip_safe=False)

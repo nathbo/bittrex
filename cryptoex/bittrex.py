@@ -55,7 +55,9 @@ class Bittrex():
         """Create Bittrex instance
 
         Checks args and kwargs for key/secret or file
-        If it is supplied they get added, else they are None"""
+        If it is supplied they get added, else they are ''"""
+        self.key = ''
+        self.secret = ''
         if 'key' in kwargs and 'secret' in kwargs:
             self.key = kwargs['key']
             self.secret = kwargs['secret']
