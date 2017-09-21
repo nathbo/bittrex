@@ -1,9 +1,9 @@
 '''Bittrex API wrapper
 
-See https://bittrex.com/home/api
+See: https://bittrex.com/home/api
 
 Notes
---------
+-----
 Specify markets as 'btc-ltc' or 'BTC-LTC'
 '''
 import requests
@@ -55,7 +55,8 @@ class Bittrex():
         """Create Bittrex instance
 
         Checks args and kwargs for key/secret or file
-        If it is supplied they get added, else they are ''"""
+        If it is supplied they get added, else they are ''.
+        API-documentation at: https://bittrex.com/home/api"""
         self.key = ''
         self.secret = ''
         if 'key' in kwargs and 'secret' in kwargs:

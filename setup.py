@@ -1,10 +1,11 @@
 from setuptools import setup, find_packages
 
 long_description = """
-Contains multiple API wrappers for different cryptocurrency exchanges."""
+Contains multiple API wrappers for different cryptocurrency exchanges.
+For more documentation see http://github.com/nathbo/cryptoexchanges"""
 
 setup(name='crypto_exchanges',
-      version='0.1.1.dev',
+      version='0.0.0.1.dev',
       description='Simple API wrappers for the exchange APIs',
       long_description=long_description,
       url='http://github.com/nathbo/cryptoexchanges',

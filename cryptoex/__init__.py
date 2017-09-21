@@ -1,1 +1,2 @@
-# from .bittrex import *
+from .bittrex import Bittrex
+from .poloniex import Poloniex

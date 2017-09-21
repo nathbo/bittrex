@@ -1,10 +1,12 @@
 '''Poloniex API wrapper
 
+See: https://poloniex.com/support/api/
+
 Handles public and private calls
 ToDo: Streaming API
 
 Notes
---------
+-----
 Markets are called as 'BTC_LTC' - caps with underscore
 'returnTradeHistory' both as public and private command
 '''
@@ -67,6 +69,11 @@ class PoloniexApiError(Exception):
 
 class Poloniex():
     def __init__(self, *args, **kwargs):
+        """Create Poloniex instance
+
+        Checks args and kwargs for key/secret or file.
+        If it is supplied they get added, else they are ''.
+        API-documentation at: https://poloniex.com/support/api/"""
         if 'key' in kwargs and 'secret' in kwargs:
             self.key = kwargs['key']
             self.secret = kwargs['secret']
@@ -91,7 +98,28 @@ class Poloniex():
             self.key, self.secret = [l.strip() for l in lines[:2]]
 
     def api_query(self, command, **kwargs):
-        """Query the Poloniex API"""
+        """Query the Poloniex API
+
+        Parameters
+        ----------
+        command : string
+            Required argument for the API query
+        kwargs : dict
+            Other parameters, required or optional, as described in
+            https://poloniex.com/support/api/
+
+        Returns
+        -------
+        dict
+            Request result is a JSON, will be parsed to a dict
+
+        Raises
+        ------
+        PoloniexApiError
+            It the command is unknown
+            If the request is not `ok`
+            If the API does not return `success`
+        """
         # First handle the command to check which API to use
         if command in PUBLIC_SET:
             url_type = 'public'
