@@ -149,7 +149,7 @@ class Poloniex():
                                hashlib.sha512).hexdigest()
             headers = {'Sign': apisign, 'Key': self.key}
 
-            r = requests.post(URL, data=kwargs, headers=headers)
+            r = requests.post(url, data=kwargs, headers=headers)
 
         # Minor error-handling and return
         if not r.ok:
