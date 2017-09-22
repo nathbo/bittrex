@@ -75,7 +75,7 @@ class Poloniex():
         Checks args and kwargs for key/secret or file.
         If it is supplied they get added, else they are ''.
         API-documentation at: https://poloniex.com/support/api/"""
-        self.n_tries = kwargs.get('n_tries', 100)
+        self.n_tries = kwargs.get('n_tries', 1)
         self.sleep = kwargs.get('sleep', 10)
         self.key = kwargs.get('key', '')
         self.secret = kwargs.get('secret', '')
